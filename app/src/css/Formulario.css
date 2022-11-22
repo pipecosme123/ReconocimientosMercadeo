@@ -1,0 +1,95 @@
+.Formulario {
+   width: 80%;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   background: #99D7DB;
+}
+
+.Formulario form {
+   width: 85%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.Formulario h1 {
+   color: #fff;
+   text-align: center;
+}
+
+.Formulario .inputTextName {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.Formulario .inputTextName label {
+   width: 700px;
+   margin-left: 2em;
+   font-family: 'Light';
+   font-size: 1.3em;
+   text-align: left;
+   color: var(--color-verde);
+}
+
+.Formulario .inputTextName input {
+   min-width: 700px;
+   margin: 5px 0 1em;
+   padding: 0.8em;
+   font-size: 1.3em;
+   border: 0px;
+   border-radius: 30px;
+   outline: 0px;
+   text-align: center;
+   border: 2px solid transparent;
+}
+
+.Formulario h4 {
+   width: 100%;
+   margin-left: 2em;
+   font-family: 'Light';
+   font-size: 1.3em;
+   font-weight: lighter;
+   text-align: center;
+   color: var(--color-verde);
+}
+
+.Formulario .opciones {
+   width: 100%;
+}
+
+.Formulario .opciones .row {
+   margin: 1em 0;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.Formulario .mensageAdicional textarea {
+   width: 700px;
+   height: 100px;
+   margin: 5px 0 1em;
+   padding: 0.8em;
+   font-size: 1.3em;
+   border: 0px;
+   border-radius: 30px;
+   outline: 0px;
+   border: 2px solid transparent;
+}
+
+.Formulario .mensageAdicional textarea:focus, .Formulario .inputTextName input:focus{
+   border: 2px solid var(--color-verde);
+}
+
+.Formulario input[type=submit] {
+   margin: 0 auto;
+   padding: 0.5em 2em;
+   border: 0px;
+   border-radius: 25px;
+   font-family: 'Bold';
+   font-size: 1.6em;
+   color: #fff;
+   background: var(--color-colgate);
+}
