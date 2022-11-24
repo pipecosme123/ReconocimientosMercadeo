@@ -1,10 +1,14 @@
 import Formulario from './components/Formulario';
+import Informacion from './components/Informacion';
 import './css/App.css';
 
 function App() {
   return (
     <div className="App">
-      <Formulario />
+      <Informacion />
+      <div className="seccionForm">
+        <Formulario />
+      </div>
     </div>
   );
 }

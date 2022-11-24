@@ -26,10 +26,10 @@ html,
 body {
    margin: 0px;
    padding: 0px;
-   background: var(--color-verde);
 }
 
 :root {
    --color-verde: #009CA6;
+   --color-verde-claro: #99D7DB;
    --color-colgate: #D2010D;
 }

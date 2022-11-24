@@ -1,44 +1,54 @@
-import { ImgValores } from "./Imagenes";
+import { ImgValoresForm } from "./Imagenes";
 
 export const Valores = [
    {
       valor: "Innovación",
-      img: ImgValores.innovación
+      img: ImgValoresForm.innovación,
+      status:"innovacion"
    },
    {
       valor: "Enfoque",
-      img: ImgValores.enfoque
+      img: ImgValoresForm.enfoque,
+      status:"enfoque"
    },
    {
       valor: "Empoderamiento",
-      img: ImgValores.empoderamiento
+      img: ImgValoresForm.empoderamiento,
+      status:"empoderamiento"
    },
    {
       valor: "Iniciativa Digital",
-      img: ImgValores.iniciativa_digital
+      img: ImgValoresForm.iniciativa_digital,
+      status:"iniciativa_digital"
    },
    {
       valor: "Claro y Valiente",
-      img: ImgValores.claro_y_valiente
+      img: ImgValoresForm.claro_y_valiente,
+      status:"claro_valiente"
    },
    {
       valor: "Fomenta la Curiosidad",
-      img: ImgValores.fomenta_la_curiosidad
+      img: ImgValoresForm.fomenta_la_curiosidad,
+      status:"fomenta_curiosidad"
    },
    {
       valor: "Construye Conﬁanza",
-      img: ImgValores.construye_confianza
+      img: ImgValoresForm.construye_confianza,
+      status:"construye_conﬁanza"
    },
    {
       valor: "Promueve el cambio",
-      img: ImgValores.promueve_el_cambio
+      img: ImgValoresForm.promueve_el_cambio,
+      status:"promueve_cambio"
    },
    {
       valor: "Pasión",
-      img: ImgValores.pasión
+      img: ImgValoresForm.pasión,
+      status:"pasion"
    },
    {
       valor: "Escucha activa",
-      img: ImgValores.escucha_activa
+      img: ImgValoresForm.escucha_activa,
+      status:"escucha_activa"
    }
 ]

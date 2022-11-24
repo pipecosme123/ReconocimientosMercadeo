@@ -1,0 +1,10 @@
+.seccionForm {
+   padding: 3em;
+   background: var(--color-verde);
+}
+
+@media only screen and (max-width: 480px) {
+   .seccionForm {
+      padding: 3em 5%;
+   }
+}

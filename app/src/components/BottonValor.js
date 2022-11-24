@@ -1,11 +1,15 @@
 import React from 'react';
 import '../css/BottonValor.css';
 
-const BottonValor = ({ imgValor, valor }) => {
+const BottonValor = ({ data, selected, handleChacked }) => {
+
+   const handleChacked_h = () => {
+      handleChacked(data.valor);
+   }
    return (
-      <div className='BottonValor'>
-         <img src={imgValor} alt="" />
-         <p>{valor}</p>
+      <div className={`BottonValor ${selected && 'checked'}`} onClick={() => handleChacked_h()}>
+         <img src={data.img} alt="" />
+         <p>{data.valor}</p>
       </div>
    );
 };
