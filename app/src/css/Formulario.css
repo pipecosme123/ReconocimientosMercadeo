@@ -38,7 +38,7 @@
 
 .Formulario .inputTextName input {
    min-width: 700px;
-   margin: 5px 0 1em;
+   margin: 5px 0;
    padding: 0.8em;
    font-size: 1.3em;
    border: 0px;
@@ -50,7 +50,7 @@
 
 .Formulario h4 {
    width: 100%;
-   margin-left: 2em;
+   margin: 1em 0 5px;
    font-family: 'Light';
    font-size: 1.3em;
    font-weight: lighter;
@@ -60,6 +60,8 @@
 
 .Formulario .opciones {
    width: 100%;
+   text-align: center;
+   margin-bottom: 1em;
 }
 
 .Formulario .opciones .row {
@@ -69,10 +71,18 @@
    justify-content: space-between;
 }
 
+.Formulario .mensageAdicional{
+   margin-bottom: 1em;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
 .Formulario .mensageAdicional textarea {
    width: 700px;
    height: 100px;
-   margin: 5px 0 1em;
+   margin: 5px 0;
    padding: 0.8em;
    font-size: 1.3em;
    border: 0px;
@@ -87,7 +97,7 @@
 }
 
 .Formulario input[type=submit] {
-   margin: 0 auto;
+   margin: 1em auto;
    padding: 0.5em 2em;
    border: 0px;
    border-radius: 25px;
@@ -95,6 +105,15 @@
    font-size: 1.6em;
    color: #fff;
    background: var(--color-colgate);
+}
+
+.Formulario .inputTextName input.error, .Formulario .mensageAdicional textarea.error {
+   border: 2px solid #d2010d;
+}
+
+.Formulario span.error {
+   color: #d2010d;
+   font-size: 14px;
 }
 
 @media only screen and (max-width: 480px) {
@@ -133,7 +152,8 @@
       margin: 1em 0;
       font-size: 1.1em;
    }
-   .Formulario .mensageAdicional{
+
+   .Formulario .mensageAdicional {
       width: 100%;
       display: flex;
       justify-content: center;
