@@ -40,6 +40,7 @@
    min-width: 700px;
    margin: 5px 0;
    padding: 0.8em;
+   font-family: 'Light';
    font-size: 1.3em;
    border: 0px;
    border-radius: 30px;
@@ -71,7 +72,7 @@
    justify-content: space-between;
 }
 
-.Formulario .mensageAdicional{
+.Formulario .mensageAdicional {
    margin-bottom: 1em;
    display: flex;
    flex-direction: column;
@@ -84,11 +85,13 @@
    height: 100px;
    margin: 5px 0;
    padding: 0.8em;
+   font-family: 'Light';
    font-size: 1.3em;
    border: 0px;
    border-radius: 30px;
    outline: 0px;
    border: 2px solid transparent;
+   resize: none;
 }
 
 .Formulario .mensageAdicional textarea:focus,
@@ -107,13 +110,27 @@
    background: var(--color-colgate);
 }
 
-.Formulario .inputTextName input.error, .Formulario .mensageAdicional textarea.error {
+.Formulario .inputTextName input.error,
+.Formulario .mensageAdicional textarea.error {
    border: 2px solid #d2010d;
 }
 
 .Formulario span.error {
    color: #d2010d;
    font-size: 14px;
+}
+
+.Formulario span.normal {
+   color: var(--color-verde);
+   font-size: 14px;
+}
+
+.activa {
+   display: block;
+}
+
+.noActiva {
+   display: none;
 }
 
 @media only screen and (max-width: 480px) {

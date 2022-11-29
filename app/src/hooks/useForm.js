@@ -1,17 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
-// import {  } from '../hooks/RoutersLinks';
 
 export const useForm = (initialForm, validationForm) => {
 
-   const urlApi = '';
+   const urlApi = 'https://inspira.mercadeo.col1.co/api';
 
    const [form, setForm] = useState(initialForm);
    const [error, setError] = useState({});
    const [loading, setLoading] = useState(false);
    const [responseApi, setResponseApi] = useState(null);
-   const [autorizar, setAutorizar] = useState(false);
-
 
    const handleChange = (e) => {
 
@@ -25,29 +22,26 @@ export const useForm = (initialForm, validationForm) => {
       });
    };
 
-   const handleBlur = (e) => {
+   const handleBlur = async (e) => {
       handleChange(e);
-      setError(validationForm(form));
+      let listError = await validationForm(form)
+      setError(listError);
+      return Object.keys(listError).length
    }
 
-   const handleSubmit = (e, arrValores) => {
+   const handleSubmit = async (e, arrValores) => {
       e.preventDefault();
       form['valores'] = arrValores;
 
-      handleBlur(e);
+      let valorError = await handleBlur(e);
 
-      if (Object.keys(error).length === 0) {
+      if (valorError === 0) {
 
          setLoading(true);
 
-         axios.post(`${urlApi}/index.php`, form)
+         axios.post(`${urlApi}/reconocimiento`, form)
             .then((response) => {
-
                setResponseApi(response.data);
-               if (response.data === true) {
-                  resetForm();
-               }
-
             })
             .catch((error) => {
 
@@ -56,12 +50,7 @@ export const useForm = (initialForm, validationForm) => {
 
             })
             .finally(() => {
-
                setLoading(false);
-               setTimeout(() => {
-                  setResponseApi(null);
-               }, 5000);
-
             })
       }
    };
@@ -69,7 +58,8 @@ export const useForm = (initialForm, validationForm) => {
    const resetForm = () => {
       document.getElementById("formReconocimiento").reset();
       setForm(initialForm);
-      setError({ status: false })
+      setError({ status: false });
+      setResponseApi(null);
    }
 
    return {
@@ -77,9 +67,9 @@ export const useForm = (initialForm, validationForm) => {
       error,
       loading,
       responseApi,
-      autorizar,
       handleChange,
       handleBlur,
-      handleSubmit
+      handleSubmit,
+      resetForm
    }
 }

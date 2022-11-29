@@ -1,6 +1,7 @@
 import logo_inspira from "../img/logo.svg";
 import titulo from "../img/titulo.svg";
 import fotografia from "../img/fotografia.jpg";
+import Certificado from "../img/valoresForm/certificado.svg"
 
 import info_confianza from '../img/info/info_confianza.svg';
 import info_curiusidad from '../img/info/info_curiusidad.svg';
@@ -24,10 +25,22 @@ import iniciativa_digital from '../img/valoresForm/iniciativa_digital.svg';
 import innovación from '../img/valoresForm/innovación.svg';
 import pasión from '../img/valoresForm/pasión.svg';
 
+import cert_claro_y_valiente from '../img/certificado/claro_y_valiente.svg';
+import cert_construye_confianza from '../img/certificado/construye_confianza.svg';
+import cert_empoderamiento from '../img/certificado/empoderamiento.svg';
+import cert_enfoque from '../img/certificado/enfoque.svg';
+import cert_escucha_activa from '../img/certificado/escucha_activa.svg';
+import cert_fomenta_la_curiosidad from '../img/certificado/fomenta_la_curiosidad.svg';
+import cert_iniciativa_digital from '../img/certificado/iniciativa_digital.svg';
+import cert_innovación from '../img/certificado/innovación.svg';
+import cert_pasión from '../img/certificado/pasión.svg';
+import cert_promueve_el_cambio from '../img/certificado/promueve_el_cambio.svg';
+
 export const ImagenesGenerales = {
    logo_inspira,
    titulo,
-   fotografia
+   fotografia,
+   Certificado
 }
 
 export const ImgValoresInfo = {
@@ -54,4 +67,17 @@ export const ImgValoresForm = {
    iniciativa_digital,
    innovación,
    pasión,
+}
+
+export const Certificados = {
+   cert_claro_y_valiente,
+   cert_construye_confianza,
+   cert_empoderamiento,
+   cert_enfoque,
+   cert_escucha_activa,
+   cert_fomenta_la_curiosidad,
+   cert_iniciativa_digital,
+   cert_innovación,
+   cert_pasión,
+   cert_promueve_el_cambio,
 }

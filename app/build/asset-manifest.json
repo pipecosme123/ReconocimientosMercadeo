@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bfd3846c.css",
+    "main.js": "/static/js/main.cf924e85.js",
+    "static/media/certificado.svg": "/static/media/certificado.df5312a6e3cecd03b54c.svg",
+    "static/media/fotografia.jpg": "/static/media/fotografia.11f0f362c8994c671cca.jpg",
+    "static/media/logo.svg": "/static/media/logo.f65d3644aa3ef9cd7b6ae0d699fc6d59.svg",
+    "static/media/ColgateReady-HeavyItalic.ttf": "/static/media/ColgateReady-HeavyItalic.28fb184a90bf1d5b1bc3.ttf",
+    "static/media/ColgateReady-BoldItalic.ttf": "/static/media/ColgateReady-BoldItalic.4bd65eeb177d1c13b763.ttf",
+    "static/media/ColgateReady-Bold.ttf": "/static/media/ColgateReady-Bold.fe678a18b22a8499bfb0.ttf",
+    "static/media/ColgateReady-Light.ttf": "/static/media/ColgateReady-Light.d313427c964bccb1681a.ttf",
+    "static/media/ColgateReady-Regular.ttf": "/static/media/ColgateReady-Regular.5f9c1b9186db824d2643.ttf",
+    "static/media/ColgateReady-ExtraLight.ttf": "/static/media/ColgateReady-ExtraLight.6d43b36fe23f39c6b393.ttf",
+    "static/media/info_curiusidad.svg": "/static/media/info_curiusidad.6ebda0f9404c005ed0661bbcffd109eb.svg",
+    "static/media/fomenta_la_curiosidad.svg": "/static/media/fomenta_la_curiosidad.814523e1b5560db78a4e3bed3c26dfe3.svg",
+    "static/media/info_confianza.svg": "/static/media/info_confianza.287f540fa454589972e5490281f325cc.svg",
+    "static/media/info_empoderamiento.svg": "/static/media/info_empoderamiento.8d91d87a21dfb111127390f68aa04ad3.svg",
+    "static/media/empoderamiento.svg": "/static/media/empoderamiento.c657acc78a1b0c26cdd1758360454c84.svg",
+    "static/media/construye_confianza.svg": "/static/media/construye_confianza.44e5fea96749a515e702f03d3437f0b0.svg",
+    "static/media/info_cambio.svg": "/static/media/info_cambio.3083af4c7e63262a846db39fb00efb8b.svg",
+    "static/media/info_claro.svg": "/static/media/info_claro.020bf16c61bebc356157e3b13a042e93.svg",
+    "static/media/info_iniciativadigital.svg": "/static/media/info_iniciativadigital.f1b3b620563698e2c7518e452b124a57.svg",
+    "static/media/titulo.svg": "/static/media/titulo.dfed63be070e4c82f1e374de415c0be0.svg",
+    "static/media/iniciativa_digital.svg": "/static/media/iniciativa_digital.9a20c25a98f6f3e32b283e3bf1c89234.svg",
+    "static/media/promueve_el_cambio.svg": "/static/media/promueve_el_cambio.e71157925c9e94a30301bbaabde1c215.svg",
+    "static/media/info_escucha.svg": "/static/media/info_escucha.87621858411f4ff9d22e2b3a4df7b62b.svg",
+    "static/media/escucha_activa.svg": "/static/media/escucha_activa.97bc3b02949a2d51bb7c833a4130280c.svg",
+    "static/media/claro_y_valiente.svg": "/static/media/claro_y_valiente.d437c39cf51a25d7505349f9d689b163.svg",
+    "static/media/info_innovacion.svg": "/static/media/info_innovacion.220bff373a3d1f26788d8b3ba01dd6af.svg",
+    "static/media/innovación.svg": "/static/media/innovación.0eb24f786bc11df3724e078e9cd50ed1.svg",
+    "static/media/info_pasion.svg": "/static/media/info_pasion.e50993f6e84a19c5d2ac02867f59986c.svg",
+    "static/media/info_enfoque.svg": "/static/media/info_enfoque.18b8db26e9d3855304f8abfc98cf0a7c.svg",
+    "static/media/pasión.svg": "/static/media/pasión.03ff5fcbbb3c1d1b4ff7db626c3e5443.svg",
+    "static/media/enfoque.svg": "/static/media/enfoque.c1a6ad5c082dc2d13caa56372fd27f65.svg",
+    "index.html": "/index.html",
+    "main.bfd3846c.css.map": "/static/css/main.bfd3846c.css.map",
+    "main.cf924e85.js.map": "/static/js/main.cf924e85.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bfd3846c.css",
+    "static/js/main.cf924e85.js"
+  ]
+}
