@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
    res.send('Hola');
 })
 
-app.post('/', (req, res) => {
+app.post('/reconocimiento', (req, res) => {
 
    const {
       reconocido,
@@ -25,9 +25,13 @@ app.post('/', (req, res) => {
 
       connection.query(query, [reconocido, reconocedor, valores[0], valores[1], valores[2], mensaje], (error, results, fields) => {
 
-         if (error) throw error;
+         if (!error){
+            res.send(true);            
+         } else{
+            res.send(false)
+            throw error;
+         }
 
-         res.send(results[0]);
          connection.release();
       });
    })
