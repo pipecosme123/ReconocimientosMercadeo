@@ -182,8 +182,9 @@ const Formulario = ({ setArrValores, setDescargar, setForm }) => {
                </div>
                <div className="mensageAdicional">
                   <h4>Dedica un mensaje personalizado</h4>
-                  <textarea className={form['mensaje'].length > 150 ? 'error' : ''} name="mensaje" placeholder='150 max.' autoComplete="off" onChange={handleChange} />
+                  <textarea className={form['mensaje'].length > 150 || error.mensaje ? 'error' : ''} name="mensaje" placeholder='150 max.' autoComplete="off" onChange={handleChange} />
                   <span className={form['mensaje'].length > 150 ? 'error' : 'normal'}>{`${form['mensaje'].length} / 150`}</span>
+                  {error.mensaje && <span className='error'>{error['mensaje']}</span>}
                </div>
                <div className="inputTextName">
                   <label htmlFor="reconocedor">Quien hace el reconocimiento:</label>
