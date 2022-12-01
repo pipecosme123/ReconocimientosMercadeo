@@ -11,9 +11,16 @@
    border-radius: 20px;
    background: #ffffff73;
    transition: 100ms;
+
+   word-wrap: break-word;
+   overflow-wrap: break-word;
+   -webkit-hyphens: auto;
+   -moz-hyphens: auto;
+   -ms-hyphens: auto;
+   hyphens: auto;
 }
 
-.opciones.error .BottonValor{
+.opciones.error .BottonValor {
    border: 2px solid #d2010d;
 }
 

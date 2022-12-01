@@ -39,6 +39,7 @@
 
 .Informacion .info-texto .fotografia {
    width: 30%;
+   max-width: 500px;
    position: absolute;
    right: 6em;
    top: 2em;
