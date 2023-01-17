@@ -4,6 +4,7 @@ import { useState } from "react";
 export const useForm = (initialForm, validationForm) => {
 
    const urlApi = 'https://inspira.mercadeo.col1.co/api';
+   // const urlApi = 'http://localhost:3102';
 
    const [form, setForm] = useState(initialForm);
    const [error, setError] = useState({});
@@ -39,7 +40,8 @@ export const useForm = (initialForm, validationForm) => {
 
          setLoading(true);
 
-         axios.post(`${urlApi}/reconocimiento`, form)
+         // axios.post(`${urlApi}/reconocimiento`, form)
+         axios.post(`${urlApi}/reconocimiento_paises`, form)
             .then((response) => {
                setResponseApi(response.data);
             })

@@ -46,7 +46,7 @@ const validationForm = async (form) => {
    return errors;
 }
 
-const Formulario = ({ setArrValores, setDescargar, setForm }) => {
+const Formulario = ({ setArrValores, setDescargar, setForm, namePage }) => {
 
    const {
       form,
@@ -150,6 +150,8 @@ const Formulario = ({ setArrValores, setDescargar, setForm }) => {
    }
 
    useEffect(() => {
+
+      form['area'] = namePage;
 
       if (responseApi === true) {
          setDescargar(true);
