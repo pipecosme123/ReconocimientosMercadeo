@@ -1,10 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
+import { urlApi } from "../constants/RoutersLinks";
 
 export const useForm = (initialForm, validationForm) => {
-
-   const urlApi = 'https://inspira.mercadeo.col1.co/api';
-   // const urlApi = 'http://localhost:3102';
 
    const [form, setForm] = useState(initialForm);
    const [error, setError] = useState({});
@@ -41,8 +39,9 @@ export const useForm = (initialForm, validationForm) => {
          setLoading(true);
 
          // axios.post(`${urlApi}/reconocimiento`, form)
-         axios.post(`${urlApi}/reconocimiento_paises`, form)
+         axios.post(`${urlApi}/reconocimiento`, form)
             .then((response) => {
+               // console.log(response.data);
                setResponseApi(response.data);
             })
             .catch((error) => {
@@ -63,6 +62,8 @@ export const useForm = (initialForm, validationForm) => {
       setError({ status: false });
       setResponseApi(null);
    }
+
+
 
    return {
       form,

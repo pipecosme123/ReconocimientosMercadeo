@@ -96,7 +96,8 @@
 }
 
 .Formulario .mensageAdicional textarea:focus,
-.Formulario .inputTextName input:focus {
+.Formulario .inputTextName input:focus,
+.selectNombre:focus {
    border: 2px solid var(--color-verde);
 }
 
@@ -112,7 +113,8 @@
 }
 
 .Formulario .inputTextName input.error,
-.Formulario .mensageAdicional textarea.error {
+.Formulario .mensageAdicional textarea.error,
+.selectNombre.error {
    border: 2px solid #d2010d;
 }
 
@@ -132,6 +134,23 @@
 
 .noActiva {
    display: none;
+}
+
+.selectNombre {
+   min-width: 700px;
+   margin: 5px 0;
+   padding: 0.8em;
+   font-family: 'Light';
+   font-size: 1.3em;
+   border: 0px;
+   border-radius: 30px;
+   outline: 0px;
+   text-align: center;
+   border: 2px solid transparent;
+}
+
+option {
+   background: #f7f7f7;
 }
 
 @media only screen and (max-width: 480px) {
@@ -158,7 +177,7 @@
       text-align: center;
    }
 
-   .Formulario .inputTextName input {
+   .Formulario .inputTextName .selectNombre {
       min-width: 100%;
       padding: 10px;
       font-size: 1em;

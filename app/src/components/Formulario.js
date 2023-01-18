@@ -8,6 +8,9 @@ import Spinner from './Spinner';
 
 
 import '../css/Formulario.css';
+import axios from 'axios';
+import { urlApi } from '../constants/RoutersLinks';
+import Swal from 'sweetalert2';
 
 const initialForm = {
    reconocido: '',
@@ -19,18 +22,18 @@ const initialForm = {
 const validationForm = async (form) => {
    let errors = {};
 
-   let lim = 60, limMsg = 150;
+   let limMsg = 150;
 
    if (form['reconocido'] === '') {
-      errors['reconocido'] = "Debes llenar este campo";
-   } else if (form['reconocido'].length > lim) {
-      errors['reconocido'] = `Límite de caracteres superado. ${lim} max.`;
+      errors['reconocido'] = "Debes seleccionar el nombre de una persona";
+   } else if (form['reconocido'] === form['reconocedor']) {
+      errors['reconocido'] = "El reconocido y reconocedor no pueden ser la misma persona";
    }
 
    if (form['reconocedor'] === '') {
-      errors['reconocedor'] = "Debes llenar este campo";
-   } else if (form['reconocedor'].length > lim) {
-      errors['reconocedor'] = `Límite de caracteres superado. ${lim} max.`;
+      errors['reconocedor'] = "Debes seleccionar el nombre de una persona";
+   } else if (form['reconocido'] === form['reconocedor']) {
+      errors['reconocedor'] = "El reconocido y reconocedor no pueden ser la misma persona";
    }
 
    if (form['mensaje'] === '') {
@@ -46,7 +49,7 @@ const validationForm = async (form) => {
    return errors;
 }
 
-const Formulario = ({ setArrValores, setDescargar, setForm, namePage }) => {
+const Formulario = () => {
 
    const {
       form,
@@ -57,6 +60,8 @@ const Formulario = ({ setArrValores, setDescargar, setForm, namePage }) => {
       handleSubmit,
       resetForm
    } = useForm(initialForm, validationForm);
+
+   const [listNombres, setListNombres] = useState([]);
 
    const [checked, setChecked] = useState({
       innovacion: false,
@@ -97,7 +102,7 @@ const Formulario = ({ setArrValores, setDescargar, setForm, namePage }) => {
             arrFoto.push(res[0])
          }
       }
-      console.log('entro');
+      // console.log('entro');
 
       return {
          arr,
@@ -129,8 +134,6 @@ const Formulario = ({ setArrValores, setDescargar, setForm, namePage }) => {
 
       let valores = await arrayValores();
       handleSubmit(e, valores.arr);
-      setForm(form)
-      setArrValores(valores.arrFoto);
    }
 
    const resetFormComp = () => {
@@ -149,16 +152,36 @@ const Formulario = ({ setArrValores, setDescargar, setForm, namePage }) => {
       })
    }
 
+   const respuestaAlerta = () => {
+
+      Swal.fire({
+         title: 'Muchas gracias por tu reconocimiento',
+         icon: 'success',
+         html:
+            'En los próximos minutos, tu reconocimiento llegará por correo electrónico a la persona que reconociste',
+         focusConfirm: true,
+         confirmButtonText: 'Ok!',
+      })
+
+      resetFormComp();
+
+   }
+
    useEffect(() => {
 
-      form['area'] = namePage;
-
-      if (responseApi === true) {
-         setDescargar(true);
-         resetFormComp();
+      const getNombres = async () => {
+         axios.get(`${urlApi}/nombres`)
+            .then((response) => {
+               setListNombres(response.data);
+            })
+            .catch((error) => {
+               console.log(error)
+            })
       }
 
-   }, [responseApi]);
+      getNombres();
+
+   }, []);
 
    return (
       <>
@@ -168,7 +191,12 @@ const Formulario = ({ setArrValores, setDescargar, setForm, namePage }) => {
 
                <div className="inputTextName">
                   <label htmlFor="reconocido">A quien se le reconoce:</label>
-                  <input className={error.reconocido ? 'error' : ''} type="text" name='reconocido' placeholder='Nombre y Apellido*' autoComplete="off" onChange={handleChange} />
+                  <select className={`selectNombre ${!error['reconocido'] ? "" : "error"}`} name="reconocido" id="reconocido" defaultValue={""} onChange={handleChange}>
+                     <option value="" disabled>Selecciona un nombre</option>
+                     {listNombres.map((item, index) => (
+                        <option key={index} value={item.nombres}>{item.nombres}</option>
+                     ))}
+                  </select>
                   {error.reconocido && <span className='error'>{error['reconocido']}</span>}
                </div>
                <h4>Seleccione hasta 3 valores que desea reconocer*</h4>
@@ -190,13 +218,19 @@ const Formulario = ({ setArrValores, setDescargar, setForm, namePage }) => {
                </div>
                <div className="inputTextName">
                   <label htmlFor="reconocedor">Quien hace el reconocimiento:</label>
-                  <input className={error.reconocedor ? 'error' : ''} type="text" name='reconocedor' placeholder='Nombre y Apellido*' autoComplete="off" onChange={handleChange} />
+                  <select className={`selectNombre ${!error['reconocedor'] ? "" : "error"}`} name="reconocedor" id="reconocedor" defaultValue={""} onChange={handleChange}>
+                     <option value="" disabled>Selecciona un nombre</option>
+                     {listNombres.map((item, index) => (
+                        <option key={index} value={item.nombres}>{item.nombres}</option>
+                     ))}
+                  </select>
                   {error.reconocedor && <span className='error'>{error['reconocedor']}</span>}
                </div>
 
                <input type="submit" value="Guardar" />
             </form>
             {loading === true && <Spinner />}
+            {responseApi === true && respuestaAlerta()}
          </div>
 
       </>
