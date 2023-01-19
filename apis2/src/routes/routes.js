@@ -8,6 +8,6 @@ const app = express();
 
 app.get('/nombres', selectNombres);
 app.post('/reconocimiento', insertRegistro, seleccionarCorreo, createImage, sendMail, eliminarImagen);
-app.post('/reconocimiento_paises', insertRegistroPaises);   
+app.post('/reconocimiento_paises', insertRegistroPaises);
 
 module.exports = app;

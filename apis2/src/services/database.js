@@ -2,7 +2,8 @@ const pool = require('../config/conexionDB.js');
 
 const selectNombres = (req, res, next) => {
 
-   const query = `SELECT idUsuarios, nombres FROM usuarios_mercadeo_col`;
+   // const query = `SELECT idUsuarios, nombres FROM usuarios_mercadeo_col`;
+   const query = `SELECT idUsuarios, nombres FROM usuarios_mercadeo_col ORDER BY nombres ASC`;
 
    pool.getConnection((err, connection) => {
 
@@ -36,6 +37,8 @@ const insertRegistro = (req, res, next) => {
          if (error) {
             throw error;
          } else {
+            console.log('insertRegistro');
+            res.send(true);
             next();
          }
          connection.release();
@@ -91,6 +94,7 @@ const seleccionarCorreo = (req, res, next) => {
          if (error) {
             throw error;
          } else {
+            console.log('seleccionarCorreo');
             req.body.correo = results[0].correos
             next();
          }

@@ -6,7 +6,7 @@ const mysqlConnection = mysql.createPool({
    host: process.env.DDBB_HOST,
    user: process.env.DDBB_USER,
    password: process.env.DDBB_PASSWORD,
-   database: process.env.DDBB_DATABASE,
+   database: "kagencia_reconocimientos",
 });
 
 module.exports = mysqlConnection;

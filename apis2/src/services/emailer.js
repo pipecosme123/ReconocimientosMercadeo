@@ -31,7 +31,7 @@ const sendMail = async (req, res, next) => {
    const transporter = createTransport();
 
    const email = await transporter.sendMail({
-      from: "'K Agencia SAS' <facebook@kagencia.com>",
+      from: "'Colgate Inspira' <colgateinspira@col1.co>",
       to: correo,
       subject: "¡Felicitaciones! 🥳 Te han reconocido -  Colgate Inspira",
       html: `
@@ -51,7 +51,7 @@ const sendMail = async (req, res, next) => {
    })
 
    if(email.messageId !== undefined){
-      res.send("Enviado")
+      console.log('enviado');
       next();
    }
 }
