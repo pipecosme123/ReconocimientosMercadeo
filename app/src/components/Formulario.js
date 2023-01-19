@@ -49,7 +49,7 @@ const validationForm = async (form) => {
    return errors;
 }
 
-const Formulario = () => {
+const Formulario = ({ urlImgValores, setForm, downloadImage }) => {
 
    const {
       form,
@@ -102,7 +102,7 @@ const Formulario = () => {
             arrFoto.push(res[0])
          }
       }
-      // console.log('entro');
+
 
       return {
          arr,
@@ -127,13 +127,17 @@ const Formulario = () => {
             [valor]: false
          })
       }
-
    }
 
    const handleSubmitInt = async (e) => {
+      e.preventDefault();
 
-      let valores = await arrayValores();
-      handleSubmit(e, valores.arr);
+      const valores = await arrayValores();
+      urlImgValores(checked);
+      setForm(form);
+      let imagen = await downloadImage();
+   
+      handleSubmit(e, valores.arr, imagen);
    }
 
    const resetFormComp = () => {

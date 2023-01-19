@@ -4,5 +4,5 @@ export const RoutersLinks = {
    Bolivia: 'Bolivia',
 };
 
-// export const urlApi = 'https://inspira.mercadeo.col1.co/api';
-export const urlApi = 'http://localhost:3102';
+export const urlApi = 'https://inspira.mercadeo.col1.co/api';
+// export const urlApi = 'http://localhost:3102';

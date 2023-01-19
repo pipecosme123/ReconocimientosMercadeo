@@ -59,6 +59,7 @@
 }
 
 .certificado .certificado-valores .imagenValor img {
+   position: relative;
    height: 200px;
    margin: 0 40px;
 }
@@ -67,4 +68,11 @@
    font-family: "Bold";
    font-size: 20px;
    color: var(--color-verde);
+
+   word-wrap: break-word;
+   overflow-wrap: break-word;
+   -webkit-hyphens: auto;
+   -moz-hyphens: auto;
+   -ms-hyphens: auto;
+   hyphens: auto;
 }

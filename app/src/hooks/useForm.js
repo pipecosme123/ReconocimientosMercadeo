@@ -28,9 +28,10 @@ export const useForm = (initialForm, validationForm) => {
       return Object.keys(listError).length
    }
 
-   const handleSubmit = async (e, arrValores) => {
+   const handleSubmit = async (e, arrValores, imagen) => {
       e.preventDefault();
       form['valores'] = arrValores;
+      form['imagen'] = imagen;
 
       let valorError = await handleBlur(e);
 
@@ -38,10 +39,8 @@ export const useForm = (initialForm, validationForm) => {
 
          setLoading(true);
 
-         // axios.post(`${urlApi}/reconocimiento`, form)
          axios.post(`${urlApi}/reconocimiento`, form)
             .then((response) => {
-               // console.log(response.data);
                setResponseApi(response.data);
             })
             .catch((error) => {
@@ -62,8 +61,6 @@ export const useForm = (initialForm, validationForm) => {
       setError({ status: false });
       setResponseApi(null);
    }
-
-
 
    return {
       form,

@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import '../css/imagen.css';
 
 const Imagen = ({ data, arrValores }) => {
+
+   useEffect(() => {
+      
+   }, [arrValores]);
 
    return (
       <div className='certificado' id='certificado'>

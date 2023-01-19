@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.f7e97675.css",
-    "main.js": "/static/js/main.d9a210fe.js",
-    "static/media/certificado.svg": "/static/media/certificado.3c8a11e85e9734e1a974fba1b85fc32e.svg",
+    "main.css": "/static/css/main.e9bf6b40.css",
+    "main.js": "/static/js/main.a261bb1b.js",
+    "static/media/certificado.svg": "/static/media/certificado.df5312a6e3cecd03b54c.svg",
     "static/media/fotografia.jpg": "/static/media/fotografia.11f0f362c8994c671cca.jpg",
     "static/media/logo.svg": "/static/media/logo.f65d3644aa3ef9cd7b6ae0d699fc6d59.svg",
     "static/media/ColgateReady-HeavyItalic.ttf": "/static/media/ColgateReady-HeavyItalic.28fb184a90bf1d5b1bc3.ttf",
@@ -33,11 +33,11 @@
     "static/media/pasión.svg": "/static/media/pasión.03ff5fcbbb3c1d1b4ff7db626c3e5443.svg",
     "static/media/enfoque.svg": "/static/media/enfoque.c1a6ad5c082dc2d13caa56372fd27f65.svg",
     "index.html": "/index.html",
-    "main.f7e97675.css.map": "/static/css/main.f7e97675.css.map",
-    "main.d9a210fe.js.map": "/static/js/main.d9a210fe.js.map"
+    "main.e9bf6b40.css.map": "/static/css/main.e9bf6b40.css.map",
+    "main.a261bb1b.js.map": "/static/js/main.a261bb1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7e97675.css",
-    "static/js/main.d9a210fe.js"
+    "static/css/main.e9bf6b40.css",
+    "static/js/main.a261bb1b.js"
   ]
 }
