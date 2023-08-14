@@ -16,6 +16,8 @@ const createImage = (req, res, next) => {
          console.log('createImage');
          req.body.nameImagen = nameImagen;
          next();
+      }else{
+         next(err);
       }
    });
 

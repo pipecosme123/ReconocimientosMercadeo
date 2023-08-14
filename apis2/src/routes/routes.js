@@ -6,6 +6,7 @@ const eliminarImagen = require('../services/eliminarImagen.js');
 
 const app = express();
 
+app.get('/nombres', (req, res) => res.send("Server Run, Ok!"));
 app.get('/nombres', selectNombres);
 app.post('/reconocimiento', insertRegistro, seleccionarCorreo, createImage, sendMail, eliminarImagen);
 app.post('/reconocimiento_paises', insertRegistroPaises);

@@ -7,10 +7,10 @@ const selectNombres = (req, res, next) => {
 
    pool.getConnection((err, connection) => {
 
-      if (err) throw err;
+      if (err) next(err);
 
       connection.query(query, (error, results, fields) => {
-         if (error) throw error;
+         if (error) next(error);
          res.send(results);
          connection.release();
       });
@@ -31,14 +31,13 @@ const insertRegistro = (req, res, next) => {
 
    pool.getConnection((err, connection) => {
 
-      if (err) throw err;
+      if (err) next(err);
 
       connection.query(query, [reconocido, reconocedor, valores[0], valores[1], valores[2], mensaje], (error, results, fields) => {
          if (error) {
-            throw error;
+            next(error);
          } else {
             console.log('insertRegistro');
-            res.send(true);
             next();
          }
          connection.release();
@@ -62,16 +61,13 @@ const insertRegistroPaises = (req, res, next) => {
 
    pool.getConnection((err, connection) => {
 
-      if (err) throw err;
+      if (err) next(err);
 
       connection.query(query, [reconocido, reconocedor, valores[0], valores[1], valores[2], mensaje, area], (error, results, fields) => {
+         
+         if (err) next(err);
 
-         if (!error) {
-            res.send(true);
-         } else {
-            res.send(false)
-            throw error;
-         }
+         next();
 
          connection.release();
       });
@@ -87,12 +83,12 @@ const seleccionarCorreo = (req, res, next) => {
 
    pool.getConnection((err, connection) => {
 
-      if (err) throw err;
+      if (err) next(err);
 
       connection.query(queryCorreo, [reconocido], (error, results, fields) => {
 
          if (error) {
-            throw error;
+            next(error);
          } else {
             console.log('seleccionarCorreo');
             req.body.correo = results[0].correos

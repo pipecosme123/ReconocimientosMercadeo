@@ -9,6 +9,7 @@ const eliminarImagen = (req, res, next) => {
 
    fs.rmSync(path.join(__dirname, `../upload/${nameImagen}.jpg`));
    
+   res.send(true)
    console.log('Archivo eliminado');
 
 }

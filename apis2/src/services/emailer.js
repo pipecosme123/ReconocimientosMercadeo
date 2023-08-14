@@ -48,12 +48,15 @@ const sendMail = async (req, res, next) => {
             path: path.join(__dirname, `../upload/${nameImagen}.jpg`)
          }
       ]
+   }, (err, info) => {
+      if (err) {
+         next(err);
+      }
+      else {
+         console.log('enviado');
+         next();
+      }
    })
-
-   if(email.messageId !== undefined){
-      console.log('enviado');
-      next();
-   }
 }
 
 module.exports = sendMail;
